@@ -1,12 +1,9 @@
 ```lua
 local Handle_Initiate_S = game.ReplicatedStorage.Remotes.To_Server.Handle_Initiate_S
-
-Handle_Initiate_S:FireServer(
-    "arrow_knock_back_damage",
-    game.Players.LocalPlayer.Character, 
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
-    workspace.Map.DreamWorld["Dream Core"], 
-    0/0,
-    0/0
-)
+Handle_Initiate_S:FireServer("skil_ting_asd", game.Players.LocalPlayer, "arrow_knock_back", 5)
+for i,v in next, workspace:GetDescendants() do 
+    if v.Name:find("Civilian") and v:IsA("Model") then 
+        Handle_Initiate_S:FireServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, v, 0/0, 0/0)
+    end 
+end 
 ```
