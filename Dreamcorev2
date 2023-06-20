@@ -1,0 +1,12 @@
+```lua
+local Handle_Initiate_S = game.ReplicatedStorage.Remotes.To_Server.Handle_Initiate_S
+
+Handle_Initiate_S:FireServer(
+    "arrow_knock_back_damage",
+    game.Players.LocalPlayer.Character, 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+    workspace.Map.DreamWorld["Dream Core"], 
+    0/0,
+    0/0
+)
+```
